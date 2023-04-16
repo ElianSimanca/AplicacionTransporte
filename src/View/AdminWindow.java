@@ -34,13 +34,14 @@ public class AdminWindow extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanelRegistroUsuarios = new javax.swing.JPanel();
-        jTextField6 = new javax.swing.JTextField();
+        jTextFieldBuscarClienteID = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonEliminarCliente = new javax.swing.JButton();
         jPanelRegistrarTrabajadores = new javax.swing.JPanel();
         jTextFieldCreateDriverTelefono = new javax.swing.JTextField();
         jTextFieldCreateDriverPassword = new javax.swing.JTextField();
@@ -110,19 +111,25 @@ public class AdminWindow extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
-        jPanelFinanzas.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 110, -1));
+        jPanelFinanzas.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 110, -1));
 
         jLabel8.setText("TOTAL RECAUDADO:");
-        jPanelFinanzas.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+        jPanelFinanzas.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, -1));
 
         jButton4.setText("Imprimir");
         jPanelFinanzas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 80, -1));
+
+        jLabel16.setText("jLabel16");
+        jPanelFinanzas.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, -1, -1));
+
+        jLabel17.setText("Imprimir ingresos del dia:");
+        jPanelFinanzas.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, -1));
 
         jTabbedPane1.addTab("Finanzas", jPanelFinanzas);
 
         jPanelRegistroUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRegistroUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanelRegistroUsuarios.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 74, -1));
+        jPanelRegistroUsuarios.add(jTextFieldBuscarClienteID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 74, -1));
 
         jLabel6.setText("Buscar o eliminar por ID:");
         jPanelRegistroUsuarios.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
@@ -131,15 +138,12 @@ public class AdminWindow extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanelRegistroUsuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 370, -1));
+        jPanelRegistroUsuarios.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 420, 220));
 
-        jButton2.setText("Buscar");
-        jPanelRegistroUsuarios.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        jButtonEliminarCliente.setText("Eliminar Cliente");
+        jPanelRegistroUsuarios.add(jButtonEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
 
-        jButton3.setText("Eliminar Usuario");
-        jPanelRegistroUsuarios.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 50, -1, -1));
-
-        jTabbedPane1.addTab("Administrar Usuarios", jPanelRegistroUsuarios);
+        jTabbedPane1.addTab("Administrar Clientes", jPanelRegistroUsuarios);
 
         jPanelRegistrarTrabajadores.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRegistrarTrabajadores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -369,11 +373,10 @@ public class AdminWindow extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    public javax.swing.JButton jButtonEliminarCliente;
     public javax.swing.JButton jButtonEliminarConductor;
     public javax.swing.JButton jButtonRegistrarConductor;
     private javax.swing.JLabel jLabel1;
@@ -383,6 +386,8 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -409,9 +414,9 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     public javax.swing.JTextArea jTextAreaDriverBuscado;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField9;
+    public javax.swing.JTextField jTextFieldBuscarClienteID;
     public javax.swing.JTextField jTextFieldBuscarIDDriver;
     public javax.swing.JTextField jTextFieldCreateDriverCedula;
     public javax.swing.JTextField jTextFieldCreateDriverID;
