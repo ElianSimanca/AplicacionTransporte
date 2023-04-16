@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import Model.Client;
 import Model.Driver;
 import Model.User;
 import View.AdminWindow;
@@ -32,6 +33,7 @@ public class CTRLAdminWindow implements ActionListener{
         this.view = view;
         this.view.jButtonRegistrarConductor.addActionListener(this);
         this.view.jButtonEliminarConductor.addActionListener(this);
+        this.view.jButtonEliminarCliente.addActionListener(this);
     }
     
     public void start(){
@@ -128,26 +130,67 @@ public class CTRLAdminWindow implements ActionListener{
                 }
             }
             //Con la posicion sel conductor obtenida, se procede a eliminar al conductor:
-            if (Dposition >= 0) {                   
-                listas.deleteUser(Dposition);
-                JOptionPane.showMessageDialog(view, "El Trabajador "+ listas.getDriverlist().get(Dposition).getName()+" ha sido eliminado del Sistema.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            }else{
+            if (Dposition == -1) {                   
+                
                 JOptionPane.showMessageDialog(view, "Ese Trabajador no existe en el sistema", "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            //El mismo codigo anterior pero para buscar y eliminarlo de la lista general de usuarios:
-            ArrayList<User> users = listas.getUserslist();
-            int Sposition = -1; // inicializamos la posición en -1
-            for (int i = 0; i < users.size(); i++) {
-                User user = users.get(i);
-                if (user.getUserID().equals(driverID)) {
-                    Sposition = i; // guardamos la posición actual
-                    break;
-                }             
-            }
-            if (Sposition >= 0) {
+                
+            }else{  
+                JOptionPane.showMessageDialog(view, "El Trabajador "+ listas.getDriverlist().get(Dposition).getName()+" ha sido eliminado del Sistema.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                listas.deleteDriver(Dposition);
+                
+                //El mismo codigo anterior pero para buscar y eliminarlo de la lista general de usuarios:
+                 ArrayList<User> users = listas.getUserslist();
+                int Sposition = -1; // inicializamos la posición en -1
+                for (int i = 0; i < users.size(); i++) {
+                    User user = users.get(i);
+                    if (user.getUserID().equals(driverID)) {
+                        Sposition = i; // guardamos la posición actual
+                        break;
+                    }             
+                }
+                //Eliminar Usuario tambien
                 listas.deleteUser(Sposition);
             }
-        }        
+            
+        }else if(e.getSource()== this.view.jButtonEliminarCliente){
+            if(view.jTextFieldBuscarClienteID.getText().isEmpty()){
+                JOptionPane.showMessageDialog(view, "Por favor Rellene el campo", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                return;         
+            }
+            String ClientID = view.jTextFieldBuscarClienteID.getText();
+            //Buscamos la posicion del cliente el cual se quiere eliminar:
+            ArrayList<Client> clients = listas.getClientslist();
+            int Cposition = -1;
+            for(int i= 0; i > clients.size();i++){
+                Client client = clients.get(i);
+                if(client.getUserID().equals(ClientID)){
+                    Cposition = i;
+                    break;
+                }
+                
+            }
+            
+            if(Cposition == -1){
+                JOptionPane.showMessageDialog(view, "El cliente no existe en el sistema", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }else{
+                JOptionPane.showMessageDialog(view, "El Trabajador "+ listas.getClientslist().get(Cposition).getName()+" ha sido eliminado del Sistema.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                listas.deleteClient(Cposition);
+                
+                //El mismo codigo anterior pero para buscar y eliminarlo de la lista general de usuarios:
+                 ArrayList<User> users = listas.getUserslist();
+                int Sposition = -1; // inicializamos la posición en -1
+                for (int i = 0; i < users.size(); i++) {
+                    User user = users.get(i);
+                    if (user.getUserID().equals(ClientID)) {
+                        Sposition = i; // guardamos la posición actual
+                        break;
+                    }             
+                }
+                //Eliminar Usuario tambien
+                listas.deleteUser(Sposition);
+            }
+            
+        }     
     }    
 }
     
