@@ -11,13 +11,14 @@ import javax.swing.JOptionPane;
  * @author Elian
  */
 public class Driver extends User implements Serializable{
+    private static final long serialVersionUID = 4563326279871677993L;
     private String matricula;
     private AcceptedService servicioAceptado;
 
     
 
-    public Driver(String matricula, String userID, String name, String cedula, String PhoneNumber, String userType) {
-        super(userID, name, cedula, PhoneNumber,null, userType);
+    public Driver(String matricula, String userID, String name, String cedula, String PhoneNumber, String userType,String password) {
+        super(userID, name, cedula, PhoneNumber,password, userType);
         this.matricula = matricula;
     } 
 
