@@ -143,16 +143,11 @@ public class CTRLUserLogin implements ActionListener{
             boolean isRegistered = false;
             for(User user : users){
                 
-                if(user.getUserID().equals(userid)){
+                if(user.getUserID().equals(userid)&& user.getPassword().equals(password)){
                     isRegistered = true;
                     break;
                     
-                }
-                if(user.getPassword().equals(password)){
-                    
-                    isRegistered = true;
-                    break;    
-                }
+                }              
             }
             
             
@@ -191,6 +186,8 @@ public class CTRLUserLogin implements ActionListener{
                 view.jTextFieldLoginClientPassword.setText("");
                 JOptionPane.showMessageDialog(view, "El UserID o la contraseña no estan correctas", "Arvertencia", JOptionPane.ERROR_MESSAGE);
             }
+            
+            
             //Si se presiona el Boton Login Driver
         } else if(e.getSource()==this.view.jButtonDriverLogin){
                     // Verificar si los campos están vacíos
@@ -200,19 +197,42 @@ public class CTRLUserLogin implements ActionListener{
             }
             String driverid = view.jTextFieldLoginDriverID.getText();
             String driverPassword = view.jTextFieldLoginDriverPassword.getText();
-            ArrayList<Driver> drivers = listas.getDriverlist();
+            
             //Validar contraseña y id del conductor 
+            ArrayList<Driver> drivers = listas.getDriverlist();
+            boolean isRegistered= false;
             for(Driver driver: drivers){
                 if(driver.getUserID().equals(driverid) && driver.getPassword().equals(driverPassword)){
-                    DriverWindow d= new DriverWindow();
-                    d.setTitle("Interfaz del Conductor");
-                    d.setVisible(true);
-                }else{
-                    view.jTextFieldLoginDriverID.setText("");
-                    view.jTextFieldLoginDriverPassword.setText("");
-                    JOptionPane.showMessageDialog(view,"El DriverID o la contraseña no estan correctas", "Arvertencia", JOptionPane.ERROR_MESSAGE);
+                    isRegistered = true;
+                        break;
                 }
             }
+            
+            
+            if(isRegistered ==true){
+                
+                int position = -1;
+                for(int i=0; i < drivers.size();i++){
+                    Driver driver = drivers.get(i);
+                    if(driver.getUserID().equals(driverid) && driver.getPassword().equals(driverPassword)){
+                        position = i; //Guardamos la posicion actual
+                        break;
+                    }
+                }
+                
+                CTRLDriverWindow cdw = new CTRLDriverWindow(driverw,driver);
+                cdw.start();
+                driverw.jTextFieldDataDriverMatricula.setText(drivers.get(position).getMatricula());
+                driverw.jTextFieldDataDriverID.setText(drivers.get(position).getUserID());
+                driverw.jTextFieldDataDriverCedula.setText(drivers.get(position).getCedula());
+                driverw.jTextFieldDataDriverTelefono.setText(drivers.get(position).getPhoneNumber());
+                driverw.jTextFieldDataDriverName.setText(drivers.get(position).getName());
+                driverw.jTextFieldDataDriverUserType.setText(drivers.get(position).getUserType());
+            }else{
+                JOptionPane.showMessageDialog(view, "El USerID o la Contraseña son Incorrectas");
+            }
+  
+            
             // Si se presiona el Boton Login Admin
         }else if(e.getSource()== this.view.jButtonAdminLogin){
                     // Verificar si los campos están vacíos

@@ -45,8 +45,8 @@ public class Admin {
         // Implementar lógica para ver reportes de la aplicación
     }
     
-    public void RegistrarConductor(String matricula, String userID, String name, String cedula, String PhoneNumber, String userType){
-        Driver driver = new Driver(matricula,userID,name,cedula,PhoneNumber,userType);       
+    public void RegistrarConductor(String matricula, String userID, String name, String cedula, String PhoneNumber, String userType,String password){
+        Driver driver = new Driver(matricula,userID,name,cedula,PhoneNumber,userType,password);       
         listas.addDriver(driver);
         
     }

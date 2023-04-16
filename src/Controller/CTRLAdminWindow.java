@@ -95,7 +95,7 @@ public class CTRLAdminWindow implements ActionListener{
                     view.jTextFieldCreateDriverTelefono.setText("");
                     JOptionPane.showMessageDialog(view, "Los datos ya están registrados", "Error", JOptionPane.ERROR_MESSAGE);
                 }else{
-                    Driver newdriver= new Driver(driverMatricula,  driverID,  driverName,  driverCedula, driverTelefono,  usertype);
+                    Driver newdriver= new Driver(driverMatricula,  driverID,  driverName,  driverCedula, driverTelefono,  usertype,driverPassword);
                     User newUser= new User(driverID,  driverName,  driverCedula,  driverTelefono, driverPassword,  usertype);
                     listas.addUser(newUser);
                     listas.addDriver(newdriver);

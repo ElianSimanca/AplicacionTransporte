@@ -28,7 +28,7 @@ public class AplicacionTransporte {
         AdminWindow adminw= new AdminWindow();
         ClientWindow clientw = new ClientWindow();
         Client client = new Client("","","","","");
-        Driver driver = new Driver("","","","","","");
+        Driver driver = new Driver("","","","","","","");
         
         CTRLUserLogin usercontroller = new CTRLUserLogin(usermodel, userview, driver, client, adminw, clientw,driverw);
         usercontroller.start();
