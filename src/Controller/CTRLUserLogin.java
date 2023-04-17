@@ -4,9 +4,13 @@
  */
 package Controller;
 
+import Model.AcceptedService;
+import Model.AcceptedServiceTableModel;
+import Model.Listas;
 import Model.Admin;
 import Model.User;
 import Model.Client;
+import Model.ClientTableModel;
 import Model.Driver;
 import View.AdminWindow;
 import View.UserLoginWindow;
@@ -119,6 +123,11 @@ public class CTRLUserLogin implements ActionListener{
                     listas.addClient(newClient);
                     view.jLabelRegisterInfo.setText("Registro exitoso");
                     view.jLabelRegisterInfo.setForeground(Color.GREEN);
+                    //Actualizar tabla de clientes:
+                    ArrayList<Client>clients = listas.getClientslist();
+                    ClientTableModel clientTableModel = new ClientTableModel(clients);
+                    AdminWindow Adminw= new AdminWindow();
+                    clientTableModel.actualizarClientTabla(clients, Adminw.jTableClientes);
 
 
                     //Vaciar los textfield
@@ -211,6 +220,9 @@ public class CTRLUserLogin implements ActionListener{
             
             if(isRegistered ==true){
                 
+                CTRLDriverWindow cdw = new CTRLDriverWindow(driverw,driver);
+                cdw.start();
+                
                 int position = -1;
                 for(int i=0; i < drivers.size();i++){
                     Driver driver = drivers.get(i);
@@ -220,8 +232,7 @@ public class CTRLUserLogin implements ActionListener{
                     }
                 }
                 
-                CTRLDriverWindow cdw = new CTRLDriverWindow(driverw,driver);
-                cdw.start();
+                
                 driverw.jTextFieldDataDriverMatricula.setText(drivers.get(position).getMatricula());
                 driverw.jTextFieldDataDriverID.setText(drivers.get(position).getUserID());
                 driverw.jTextFieldDataDriverCedula.setText(drivers.get(position).getCedula());
@@ -243,6 +254,16 @@ public class CTRLUserLogin implements ActionListener{
             Admin admin= new Admin();          
             if(view.jTextFieldAdminID.getText().equals(admin.getAmindID()) && view.jTextFieldAdminPassword.getText().equals(admin.getPassword()) ){
                 CTRLAdminWindow admincontrol = new CTRLAdminWindow(driver,adminwindow);
+                //Ponemos los datos de las finanzas en la tabla
+                ArrayList<AcceptedService> listaservicios= listas.getServiciosAceptados();
+                AcceptedServiceTableModel model = new AcceptedServiceTableModel(listaservicios);
+                AdminWindow.jTableFinanzas.setModel(model);
+                
+                //Ponemos el valor total recaudado en el jtextfield:
+                ArrayList<AcceptedService> acsm = listas.getServiciosAceptados();    
+                float totalrecaudado = acsm.size()*8000;
+                String strTotalRecaudado = Float.toString(totalrecaudado);
+                AdminWindow.jTextFieldTotalRecaudado.setText(strTotalRecaudado);
                 admincontrol.start();
                 
             }else{

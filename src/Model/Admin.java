@@ -4,8 +4,6 @@
  */
 package Model;
 
-import Controller.Listas;
-
 /**
  *
  * @author Elian

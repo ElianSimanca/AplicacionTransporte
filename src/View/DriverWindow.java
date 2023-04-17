@@ -28,15 +28,12 @@ public class DriverWindow extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jButtonReportarCliente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonAceptarServicio = new javax.swing.JButton();
+        jButtonFinalizarServicio = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTableEstadoDelServicioAceptado = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -52,7 +49,27 @@ public class DriverWindow extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jButtonReportarCliente.setText("Reportar Cliente");
+        jButtonReportarCliente.setEnabled(false);
+        jPanel1.add(jButtonReportarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 110, 30));
+
+        jLabel2.setText("Estado del Servicio");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jButtonAceptarServicio.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonAceptarServicio.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        jButtonAceptarServicio.setText("Acceptar una Carrera");
+        jButtonAceptarServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAceptarServicioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonAceptarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 290, 100));
+
+        jButtonFinalizarServicio.setText("Finalizar Servicio");
+        jPanel1.add(jButtonFinalizarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 170, 70));
+
+        jTableEstadoDelServicioAceptado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -60,38 +77,26 @@ public class DriverWindow extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "...", "...", "...", "..."
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 375, 90));
-
-        jLabel1.setText("Clientes esperando servicio");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 150, 20));
-
-        jButton1.setText("Reportar Cliente");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, -1, -1));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 380, -1));
-
-        jLabel2.setText("Estado del Servicio");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
-
-        jButton2.setText("Cancelar Servicio");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        jScrollPane3.setViewportView(jTableEstadoDelServicioAceptado);
+        if (jTableEstadoDelServicioAceptado.getColumnModel().getColumnCount() > 0) {
+            jTableEstadoDelServicioAceptado.getColumnModel().getColumn(0).setResizable(false);
+            jTableEstadoDelServicioAceptado.getColumnModel().getColumn(1).setResizable(false);
+            jTableEstadoDelServicioAceptado.getColumnModel().getColumn(2).setResizable(false);
+            jTableEstadoDelServicioAceptado.getColumnModel().getColumn(3).setResizable(false);
+        }
 
-        jButton3.setText("Finalizar Servicio");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 630, 40));
 
         jTabbedPane1.addTab("Driver Panel", jPanel1);
 
@@ -138,27 +143,24 @@ public class DriverWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonAceptarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarServicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonAceptarServicioActionPerformed
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton jButtonAceptarServicio;
+    public javax.swing.JButton jButtonFinalizarServicio;
+    public javax.swing.JButton jButtonReportarCliente;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTable jTableEstadoDelServicioAceptado;
     public javax.swing.JTextField jTextFieldDataDriverCedula;
     public javax.swing.JTextField jTextFieldDataDriverID;
     public javax.swing.JTextField jTextFieldDataDriverMatricula;
