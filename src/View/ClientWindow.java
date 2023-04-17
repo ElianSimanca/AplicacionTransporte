@@ -35,14 +35,14 @@ public class ClientWindow extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldUbicacionActual = new javax.swing.JTextField();
         jTextFieldDestino = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextAreaRegistroDeProgreso = new javax.swing.JTextArea();
         jButtonCancelarTaxi = new javax.swing.JButton();
         jButtonReportarTaxista = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabelBienvenido = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableProgresoServicioUsuario = new javax.swing.JTable();
+        jLabeEstadoDelPedido = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -65,43 +65,65 @@ public class ClientWindow extends javax.swing.JFrame {
         jButtonEnviarPeticion.setBackground(new java.awt.Color(255, 255, 255));
         jButtonEnviarPeticion.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jButtonEnviarPeticion.setText("Enviar peticion");
-        jPanel1.add(jButtonEnviarPeticion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        jPanel1.add(jButtonEnviarPeticion, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 150, 40));
 
         jLabel1.setText("Ubicacion actual");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
 
         jLabel2.setText("Destino");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
-        jPanel1.add(jTextFieldUbicacionActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 100, -1));
-        jPanel1.add(jTextFieldDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 100, -1));
-
-        jTextAreaRegistroDeProgreso.setColumns(20);
-        jTextAreaRegistroDeProgreso.setRows(5);
-        jScrollPane2.setViewportView(jTextAreaRegistroDeProgreso);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 340, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+        jPanel1.add(jTextFieldUbicacionActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 100, -1));
+        jPanel1.add(jTextFieldDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 100, -1));
 
         jButtonCancelarTaxi.setText("Cancelar Taxi");
-        jButtonCancelarTaxi.setEnabled(false);
-        jPanel1.add(jButtonCancelarTaxi, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, -1, -1));
+        jPanel1.add(jButtonCancelarTaxi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
 
         jButtonReportarTaxista.setText("Reportar Taxista");
         jButtonReportarTaxista.setEnabled(false);
-        jPanel1.add(jButtonReportarTaxista, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, -1, -1));
+        jPanel1.add(jButtonReportarTaxista, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, -1, -1));
 
         jLabel3.setText("Precio de Viaje: 8000 pesos");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, -1, -1));
 
         jLabel4.setText("Estado del Servicio");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jButton1.setText("Cerrar Sesion");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 130, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 130, -1));
 
-        jLabelBienvenido.setText("Bienvenido");
-        jPanel1.add(jLabelBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jTableProgresoServicioUsuario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "...", "...", "...", "..."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableProgresoServicioUsuario);
+        if (jTableProgresoServicioUsuario.getColumnModel().getColumnCount() > 0) {
+            jTableProgresoServicioUsuario.getColumnModel().getColumn(0).setResizable(false);
+            jTableProgresoServicioUsuario.getColumnModel().getColumn(2).setResizable(false);
+            jTableProgresoServicioUsuario.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 660, 40));
+
+        jLabeEstadoDelPedido.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabeEstadoDelPedido.setText("...");
+        jPanel1.add(jLabeEstadoDelPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 450, 30));
 
         jTabbedPane1.addTab("Pedir Taxi", jPanel1);
 
@@ -151,13 +173,11 @@ public class ClientWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 690, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
         );
 
         pack();
@@ -166,10 +186,11 @@ public class ClientWindow extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton1;
     public javax.swing.JButton jButtonCancelarTaxi;
     public javax.swing.JButton jButtonEnviarPeticion;
     public javax.swing.JButton jButtonReportarTaxista;
+    public static javax.swing.JLabel jLabeEstadoDelPedido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -180,13 +201,12 @@ public class ClientWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    public javax.swing.JLabel jLabelBienvenido;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    public javax.swing.JTextArea jTextAreaRegistroDeProgreso;
+    public static javax.swing.JTable jTableProgresoServicioUsuario;
     public javax.swing.JTextField jTextFieldDataClientCedula;
     public javax.swing.JTextField jTextFieldDataClientID;
     public javax.swing.JTextField jTextFieldDataClientNombre;

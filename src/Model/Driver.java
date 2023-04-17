@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Driver extends User implements Serializable{
     private static final long serialVersionUID = 4563326279871677993L;
+    
     private String matricula;
     private AcceptedService servicioAceptado;
 
@@ -30,15 +31,15 @@ public class Driver extends User implements Serializable{
     
     //*Metodos
     
-    public void AcceptService(ColaClientRequest c){
+    public ClientRequest AcceptService(){
+        ColaClientRequest c = new ColaClientRequest();
         if(c.estaVacia()){
-            //Guardo el dato desencolado y desencolo el dato
-            ClientRequest servicio = c.getPrimero();
-            c.desencolar();
-            //Guardar el dato Aceptado en memoria
-            servicioAceptado = new AcceptedService(servicio,this);          
+            return null;
         }
-        
+
+        ClientRequest servicio = c.desencolar();            
+            
+        return servicio;
     }
     
     public void CancelService() {

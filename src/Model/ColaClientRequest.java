@@ -4,59 +4,71 @@
  */
 package Model;
 import Model.ClientRequest;
-import java.util.NoSuchElementException;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Elian
  */
 public class ColaClientRequest {
-    private ClientRequest primero;
-    private ClientRequest ultimo;
-    private int tamaño;
+    private static NodoClientRequest primerNodo;
+    private static NodoClientRequest ultimoNodo;
 
     public ColaClientRequest() {
-        this.primero = null;
-        this.ultimo = null;
-        this.tamaño = 0;
+        ColaClientRequest.primerNodo = null;
+        ColaClientRequest.ultimoNodo = null;
     }
 
-    public ClientRequest getPrimero() {
-        return primero;
-    }
-    
-    
-    
-    public boolean estaVacia() {
-        return this.primero == null;
-    }
-
-    public int getTamano() {
-        return this.tamaño;
-    }
-    
-    public void encolar(String Ubicacion, String Destino, String hora, float payment, String userID, String name, String cedula, String PhoneNumber, String userType) {
-        ClientRequest x = new ClientRequest(Ubicacion, Destino, hora, payment, userID,name,cedula,PhoneNumber, userType);
-        if (estaVacia()) {
-            this.primero = x;
-            this.ultimo = x;
+    public static void encolar(ClientRequest solicitud) {
+        NodoClientRequest nuevoNodo = new NodoClientRequest(solicitud);
+        if (ColaClientRequest.primerNodo == null) {
+            // La cola está vacía
+            ColaClientRequest.primerNodo = nuevoNodo;
+            ColaClientRequest.ultimoNodo = nuevoNodo;
         } else {
-            this.ultimo.setSiguiente(x);
-            this.ultimo = x;
+            // La cola ya tiene elementos
+            ColaClientRequest.ultimoNodo.setSiguiente(nuevoNodo);
+            ColaClientRequest.ultimoNodo = nuevoNodo;
         }
-        this.tamaño++;
+    }
+
+    public static ClientRequest desencolar() {
+        if (ColaClientRequest.primerNodo == null) {
+            
+            // La cola está vacía
+            JOptionPane.showMessageDialog(null, "No hay servicios disponibles","Advertencia",JOptionPane.WARNING_MESSAGE);
+            return null;
+        } else {
+            // Obtenemos el primer elemento de la cola
+            ClientRequest solicitud = ColaClientRequest.primerNodo.getSolicitud();
+            ColaClientRequest.primerNodo = ColaClientRequest.primerNodo.getSiguiente();
+
+            if (ColaClientRequest.primerNodo == null) {
+                // Si eliminamos el último elemento de la cola, también actualizamos el último nodo
+                ColaClientRequest.ultimoNodo = null;
+            }
+
+            return solicitud;
+        }
     }
     
-    public void desencolar() {
-        if (estaVacia()) {
-            throw new NoSuchElementException("La cola está vacía.");
+    public static void desencolarSinRetorno(){
+        if (ColaClientRequest.primerNodo == null) {
+        // La cola está vacía
+        JOptionPane.showMessageDialog(null, "No hay servicios disponibles para cancelar", "Advertencia", JOptionPane.WARNING_MESSAGE);
+    } else {
+        // Obtenemos el primer elemento de la cola
+        ColaClientRequest.primerNodo = ColaClientRequest.primerNodo.getSiguiente();
+
+        if (ColaClientRequest.primerNodo == null) {
+            // Si eliminamos el último elemento de la cola, también actualizamos el último nodo
+            ColaClientRequest.ultimoNodo = null;
         }
-        
-        this.primero = this.primero.getSiguiente();
-        if (this.primero == null) {
-            this.ultimo = null;
-        }
-        this.tamaño--;
+        JOptionPane.showMessageDialog(null, "Se ha cancelado la peticion correctamente","Advertencia",JOptionPane.WARNING_MESSAGE);
+    }
     }
     
+    public static boolean estaVacia() {
+        return ColaClientRequest.primerNodo == null;
+    }
 }

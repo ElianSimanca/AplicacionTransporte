@@ -4,8 +4,11 @@
  */
 package Controller;
 
+import Model.Listas;
 import Model.Client;
+import Model.ClientTableModel;
 import Model.Driver;
+import Model.DriverTableModel;
 import Model.User;
 import View.AdminWindow;
 import java.awt.Color;
@@ -17,6 +20,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 
 /**
@@ -49,6 +53,19 @@ public class CTRLAdminWindow implements ActionListener{
             view.requestFocus();
         }
         });
+        //Crear tablas de usuarios
+        ArrayList<Client> clients = listas.getClientslist();
+        ClientTableModel clientTableModel = new ClientTableModel(clients);
+        JTable clientTable = view.jTableClientes;
+        clientTable.setModel(clientTableModel);
+        
+        
+        ArrayList<Driver> drivers = listas.getDriverlist();
+        DriverTableModel driverTableModel = new DriverTableModel(drivers);
+        JTable driverTable = view.jTableDrivers;
+        driverTable.setModel(driverTableModel);
+        
+        
         view.setVisible(true);
     }
     
@@ -71,21 +88,14 @@ public class CTRLAdminWindow implements ActionListener{
                 String driverPassword= view.jTextFieldCreateDriverPassword.getText();
                 
                 // Verificar si los datos ya están registrados:                
-                ArrayList<Driver> drivers = listas.getDriverlist();
+                ArrayList<User> users = listas.getUserslist();
                 boolean isRegistered = false;
-                for (Driver driver: drivers) {
-                    if (driver.getUserID().equals(driverID)) {
+                for (User user: users) {
+                    if (user.getUserID().equals(driverID)||user.getCedula().equals(driverCedula)||user.getPhoneNumber().equals(driverTelefono) ) {
                         isRegistered = true;
                         break;
                     }
-                    if (driver.getCedula().equals(driverCedula)) {
-                        isRegistered = true;
-                        break;
-                    }
-                    if (driver.getPhoneNumber().equals(driverTelefono)) {
-                        isRegistered = true;
-                        break;
-                    }
+                    
                 }
                 if(isRegistered== true){
                     //Vaciar los textfield
@@ -101,7 +111,12 @@ public class CTRLAdminWindow implements ActionListener{
                     User newUser= new User(driverID,  driverName,  driverCedula,  driverTelefono, driverPassword,  usertype);
                     listas.addUser(newUser);
                     listas.addDriver(newdriver);
-                 
+                    //Actualizar tabla
+                    ArrayList<Driver> drivers = listas.getDriverlist();
+                    DriverTableModel driverTableModel= new DriverTableModel(drivers);
+                    driverTableModel.actualizarDriverTabla(drivers, view.jTableDrivers);
+                    
+                    
                     view.jLabelRegisterInfo.setText("Registro exitoso");
                     view.jLabelRegisterInfo.setForeground(Color.GREEN);
                     //Vaciar los textfield
@@ -138,6 +153,11 @@ public class CTRLAdminWindow implements ActionListener{
                 JOptionPane.showMessageDialog(view, "El Trabajador "+ listas.getDriverlist().get(Dposition).getName()+" ha sido eliminado del Sistema.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 listas.deleteDriver(Dposition);
                 
+                //Actualizar la tabla de Conductores:
+                DriverTableModel driverTableModel= new DriverTableModel(drivers);
+                driverTableModel.actualizarDriverTabla(drivers, view.jTableDrivers);
+                
+                
                 //El mismo codigo anterior pero para buscar y eliminarlo de la lista general de usuarios:
                  ArrayList<User> users = listas.getUserslist();
                 int Sposition = -1; // inicializamos la posición en -1
@@ -149,7 +169,9 @@ public class CTRLAdminWindow implements ActionListener{
                     }             
                 }
                 //Eliminar Usuario tambien
+                JOptionPane.showMessageDialog(view, "El Trabajador "+ users.get(Sposition).getName()+" ha sido eliminado del sistema","Advertencia",JOptionPane.WARNING_MESSAGE);
                 listas.deleteUser(Sposition);
+                view.jTextFieldBuscarIDDriver.setText("");
             }
             
         }else if(e.getSource()== this.view.jButtonEliminarCliente){
@@ -161,7 +183,7 @@ public class CTRLAdminWindow implements ActionListener{
             //Buscamos la posicion del cliente el cual se quiere eliminar:
             ArrayList<Client> clients = listas.getClientslist();
             int Cposition = -1;
-            for(int i= 0; i > clients.size();i++){
+            for(int i= 0; i < clients.size();i++){
                 Client client = clients.get(i);
                 if(client.getUserID().equals(ClientID)){
                     Cposition = i;
@@ -176,6 +198,12 @@ public class CTRLAdminWindow implements ActionListener{
                 JOptionPane.showMessageDialog(view, "El Trabajador "+ listas.getClientslist().get(Cposition).getName()+" ha sido eliminado del Sistema.", "Advertencia", JOptionPane.WARNING_MESSAGE);
                 listas.deleteClient(Cposition);
                 
+                //Actualizar tabla de clientes:
+                
+                ClientTableModel clientTableModel = new ClientTableModel(clients);
+                clientTableModel.actualizarClientTabla(clients, view.jTableClientes);
+                
+                
                 //El mismo codigo anterior pero para buscar y eliminarlo de la lista general de usuarios:
                  ArrayList<User> users = listas.getUserslist();
                 int Sposition = -1; // inicializamos la posición en -1
@@ -188,6 +216,7 @@ public class CTRLAdminWindow implements ActionListener{
                 }
                 //Eliminar Usuario tambien
                 listas.deleteUser(Sposition);
+                view.jTextFieldBuscarClienteID.setText("");
             }
             
         }     

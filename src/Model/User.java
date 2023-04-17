@@ -4,7 +4,6 @@
  */
 package Model;
 
-import Controller.Listas;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,7 +13,7 @@ import java.util.ArrayList;
  */
 public class User implements Serializable{
     private static final long serialVersionUID = -2277466111565383750L;
-    private final Listas listas = new Listas();
+    
     private String userID;
     private String name;
     private String cedula;
@@ -93,6 +92,7 @@ public class User implements Serializable{
     //*Metodos de validación
     public boolean validarUsuario(String vCedula,String vPhoneNumber){
         // Verificar si los datos ya están registrados:
+            Listas listas = new Listas();
             ArrayList<User> users = listas.getUserslist();
             boolean isRegistered = false;
             for (User user : users) {

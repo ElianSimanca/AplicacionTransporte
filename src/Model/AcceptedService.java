@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author Elian
  */
 public class AcceptedService implements Serializable{
-    private ClientRequest siguiente;
+    private static final long serialVersionUID = -5285470270309768353L;
     //Servicio
     private String hora;
     private String Ubicacion;
@@ -32,12 +32,17 @@ public class AcceptedService implements Serializable{
     private String Clientcedula;
     private String ClientPhoneNumber;
     
-    public AcceptedService(ClientRequest c,Driver d) {
+    private String estadoDelServicio;
+    
+    
+    
+    public AcceptedService(ClientRequest c,Driver d,String estadoDelServicio) {
         //servicio
         this.hora= c.getHora();
         this.Ubicacion= c.getUbicacion();
         this.Destino = c.getDestino();
         this.payment = c.getPayment();
+        this.estadoDelServicio= estadoDelServicio;
         //Taxista
         this.matricula = d.getMatricula();
         this.DriveruserID = d.getUserID();
@@ -50,10 +55,19 @@ public class AcceptedService implements Serializable{
         this.Clientcedula= c.getCedula();
         this.ClientPhoneNumber = c.getPhoneNumber();
     }
+    
+    
 
-    public ClientRequest getSiguiente() {
-        return siguiente;
+    public void setEstadoDelServicio(String estadoDelServicio) {
+        this.estadoDelServicio = estadoDelServicio;
     }
+    
+    
+
+    public String getEstadoDelServicio() {
+        return estadoDelServicio;
+    }
+    
 
     public String getHora() {
         return hora;

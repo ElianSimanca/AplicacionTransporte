@@ -9,7 +9,6 @@ package Model;
  * @author Elian
  */
 public class ClientRequest extends Client{
-    private ClientRequest siguiente;
     private String Ubicacion;
     private String Destino;
     private String hora;
@@ -41,15 +40,6 @@ public class ClientRequest extends Client{
         this.Destino = Destino;
     }
     
-    
-
-    public ClientRequest getSiguiente() {
-        return siguiente;
-    }
-
-    public void setSiguiente(ClientRequest siguiente) {
-        this.siguiente = siguiente;
-    }
 
     public String getHora() {
         return hora;

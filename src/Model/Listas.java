@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controller;
+package Model;
 
 
 import Model.AcceptedService;
@@ -17,12 +17,14 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Elian
  */
 public class Listas implements Serializable{
+    private static final long serialVersionUID = -8231930996615448666L;
     private static final String ARCHIVO = "src/resources/datos.dat";
     //Lista de Usuarios en general
     private ArrayList<User> userslist;
@@ -31,25 +33,33 @@ public class Listas implements Serializable{
     //Lista Trabajadores
     private ArrayList<Driver> driverlist;
     //Lista de servicios concluidos
-    private ArrayList<AcceptedService> serviciosTerminados;
+    private ArrayList<AcceptedService> serviciosAceptados;
+    //Lista de espera de peticiones de taxi
+    private ArrayList<ClientRequest> clientrequests;
 
     public Listas() {
+        clientrequests= new ArrayList<>();
         clientslist = new ArrayList<>();
         driverlist = new ArrayList<>();
-        serviciosTerminados = new ArrayList<>();
+        serviciosAceptados= new ArrayList<>();
         userslist = new ArrayList<>();
         leerDatos();
     System.out.println("Tamaño de clientslist: " + clientslist.size());
+    System.out.println("Tamaño de clientrequest: "+ clientrequests.size());
     System.out.println("Tamaño de driverlist: " + driverlist.size());
-    System.out.println("Tamaño de serviciosTerminados: " + serviciosTerminados.size());
+    System.out.println("Tamaño de serviciosAceptados: " + serviciosAceptados.size());
     System.out.println("Tamaño de userslist: " + userslist.size());
     }
+
+    public ArrayList<ClientRequest> getClientrequests() {
+        return clientrequests;
+    }
+    
 
     public ArrayList<Driver> getDriverlist() {
         return driverlist;
     }
-    
-    
+       
 
     public ArrayList<User> getUserslist() {
         return userslist;
@@ -59,13 +69,22 @@ public class Listas implements Serializable{
         return clientslist;
     }
 
-    public  ArrayList<AcceptedService> getServiciosTerminados() {
-        return serviciosTerminados;
+    public  ArrayList<AcceptedService> getServiciosAceptados() {
+        return serviciosAceptados;
     }
     
     
     
-    
+    public void addClientRequest(ClientRequest clientRequest){
+        clientrequests.add(clientRequest);
+    }
+    public void deleteClientRequest(ClientRequest solicitud) {
+    if (this.clientrequests.remove(solicitud)) { // Eliminar la solicitud del ArrayList
+        JOptionPane.showMessageDialog(null, "Se ha eliminado la solicitud correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+    } else {
+        JOptionPane.showMessageDialog(null, "La solicitud no se encontró en la lista", "Advertencia", JOptionPane.WARNING_MESSAGE);
+    }
+}
     
     public void addDriver(Driver driver){
         driverlist.add(driver);
@@ -100,8 +119,8 @@ public class Listas implements Serializable{
         escribirDatos();
     }
     
-    public void addEndService(AcceptedService a){
-        serviciosTerminados.add(a);
+    public void addAcceptedService(AcceptedService a){
+        serviciosAceptados.add(a);
         escribirDatos();
     }
     
@@ -110,7 +129,7 @@ public class Listas implements Serializable{
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(ARCHIVO));
             out.writeObject(userslist);
             out.writeObject(clientslist);
-            out.writeObject(serviciosTerminados);
+            out.writeObject(serviciosAceptados);
             out.writeObject(driverlist);
             out.close();
         } catch (IOException ex) {
@@ -123,7 +142,7 @@ public class Listas implements Serializable{
             ObjectInputStream in = new ObjectInputStream(new FileInputStream(ARCHIVO));
             userslist = (ArrayList<User>) in.readObject();
             clientslist = (ArrayList<Client>) in.readObject();
-            serviciosTerminados = (ArrayList<AcceptedService>) in.readObject();
+            serviciosAceptados = (ArrayList<AcceptedService>) in.readObject();
             driverlist = (ArrayList<Driver>) in.readObject();
             in.close();
         } catch (IOException ex) {
