@@ -7,7 +7,6 @@ package Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -16,7 +15,7 @@ import java.util.Date;
 public class AcceptedService implements Serializable{
     private static final long serialVersionUID = -5285470270309768353L;
     //Servicio
-    private Date hora;
+    private String hora;
     private String Ubicacion;
     private String Destino;
     private float payment;
@@ -70,7 +69,7 @@ public class AcceptedService implements Serializable{
     }
     
 
-    public Date getHora() {
+    public String getHora() {
         return hora;
     }
 
@@ -122,9 +121,6 @@ public class AcceptedService implements Serializable{
         return ClientPhoneNumber;
     }
     
-    public void AlarmaAutomatica(){
-        
-    }
     
     
     
