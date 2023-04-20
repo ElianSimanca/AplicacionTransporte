@@ -31,6 +31,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
         jTabbedPaneVentanas = new javax.swing.JTabbedPane();
         jPanelLoginWindow = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -78,6 +79,8 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabelLogin5 = new javax.swing.JLabel();
 
+        jPasswordField1.setText("jPasswordField1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPaneVentanas.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -94,7 +97,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenovo\\Downloads\\9133514_signup_register_login_icon.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/9133514_signup_register_login_icon.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 70, 60));
 
         jPanelLoginWindow.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 280, 80));
@@ -103,7 +106,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenovo\\Downloads\\loj.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/loj.png"))); // NOI18N
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 60, 60));
 
         jPanelLoginWindow.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 80));
@@ -135,7 +138,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
 
         jButtonLogin.setBackground(new java.awt.Color(255, 255, 255));
         jButtonLogin.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonLogin.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenovo\\Downloads\\loj1.png")); // NOI18N
+        jButtonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/loj1.png"))); // NOI18N
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonLoginActionPerformed(evt);
@@ -318,12 +321,12 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanelCabLogin.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 70));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\lenovo\\Downloads\\car.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/car.png"))); // NOI18N
         jPanelCabLogin.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 50, 50));
 
         jLabelLogin5.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         jLabelLogin5.setText("Login");
-        jPanelCabLogin.add(jLabelLogin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, 70, 40));
+        jPanelCabLogin.add(jLabelLogin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 70, 40));
 
         jTabbedPaneVentanas.addTab("CabLogin", jPanelCabLogin);
 
@@ -438,7 +441,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelCreateUserID;
     public javax.swing.JLabel jLabelLogin;
     public javax.swing.JLabel jLabelLogin2;
-    private javax.swing.JLabel jLabelLogin5;
+    public javax.swing.JLabel jLabelLogin5;
     public javax.swing.JLabel jLabelName;
     public javax.swing.JLabel jLabelRegister;
     public javax.swing.JLabel jLabelRegisterInfo;
@@ -454,6 +457,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelAdministradorLogin;
     private javax.swing.JPanel jPanelCabLogin;
     private javax.swing.JPanel jPanelLoginWindow;
+    private javax.swing.JPasswordField jPasswordField1;
     public javax.swing.JTabbedPane jTabbedPaneVentanas;
     public javax.swing.JTextField jTextFieldAdminID;
     public javax.swing.JTextField jTextFieldAdminPassword;

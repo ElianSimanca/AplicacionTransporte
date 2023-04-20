@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -89,7 +96,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\lenovo\Downloads\9133514_signup_register_login_icon.png"/>
+                      <Image iconType="3" name="/resources/9133514_signup_register_login_icon.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -124,7 +131,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\lenovo\Downloads\loj.png"/>
+                      <Image iconType="3" name="/resources/loj.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -236,7 +243,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\lenovo\Downloads\loj1.png"/>
+                      <Image iconType="3" name="/resources/loj1.png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -781,7 +788,7 @@
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\lenovo\Downloads\car.png"/>
+                  <Image iconType="3" name="/resources/car.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -802,7 +809,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="310" y="90" width="70" height="40"/>
+                  <AbsoluteConstraints x="280" y="90" width="70" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>

@@ -35,7 +35,7 @@ public class AcceptedServiceTableModel extends AbstractTableModel{
         AcceptedService acceptedService = acceptedServices.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return acceptedService.getHora();
+                return acceptedService.getHora().toString();
             case 1:
                 return acceptedService.getUbicacion();
             case 2:

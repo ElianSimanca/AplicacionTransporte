@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.time.LocalTime;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -64,8 +65,7 @@ public class CTRLClientWindow implements ActionListener{
             String Cedula = view.jTextFieldDataClientCedula.getText();
             String Telefono= view.jTextFieldDataClientTelefono.getText();
             String UserType= view.jTextFieldDataClientUserType.getText();
-            LocalTime horaActual= LocalTime.now();
-            String hora= horaActual.toString();
+            Date hora = new Date();
             float payment = 8000;
             //UbicacionActual, Destino, hora,  payment, ClientID, Nombre, Cedula, Telefono, UserType
             ClientRequest clientRequest = new ClientRequest(UbicacionActual, Destino, hora,  payment, ClientID, Nombre, Cedula, Telefono, UserType);
