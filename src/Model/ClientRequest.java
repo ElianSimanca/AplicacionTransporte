@@ -4,6 +4,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author Elian
@@ -11,10 +13,10 @@ package Model;
 public class ClientRequest extends Client{
     private String Ubicacion;
     private String Destino;
-    private String hora;
+    private Date hora;
     private float payment;
 
-    public ClientRequest( String Ubicacion, String Destino, String hora, float payment, String userID, String name, String cedula, String PhoneNumber, String userType) {
+    public ClientRequest( String Ubicacion, String Destino, Date hora, float payment, String userID, String name, String cedula, String PhoneNumber, String userType) {
         super(userID, name, cedula, PhoneNumber, userType);
         this.Ubicacion = Ubicacion;
         this.Destino = Destino;
@@ -41,11 +43,11 @@ public class ClientRequest extends Client{
     }
     
 
-    public String getHora() {
+    public Date getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
+    public void setHora(Date hora) {
         this.hora = hora;
     }      
 
