@@ -35,15 +35,16 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jTabbedPaneVentanas = new javax.swing.JTabbedPane();
         jPanelLoginWindow = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabelRegister = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabelLogin = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabelUserID = new javax.swing.JLabel();
         jTextFieldLoginClientID = new javax.swing.JTextField();
         jTextFieldLoginClientPassword = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jButtonLogin = new javax.swing.JButton();
+        jLabelLogin = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jTextFieldCreateName = new javax.swing.JTextField();
         jLabelName = new javax.swing.JLabel();
@@ -57,16 +58,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButtonRegister = new javax.swing.JButton();
         jLabelRegisterInfo = new javax.swing.JLabel();
-        jPanelCabLogin = new javax.swing.JPanel();
-        jTextFieldLoginDriverID = new javax.swing.JTextField();
-        jTextFieldLoginDriverPassword = new javax.swing.JTextField();
-        jButtonDriverLogin = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabelLogin5 = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
+        jLabelRegister = new javax.swing.JLabel();
         jPanelAdministradorLogin = new javax.swing.JPanel();
         jButtonAdminLogin = new javax.swing.JButton();
         jTextFieldAdminID = new javax.swing.JTextField();
@@ -77,6 +69,15 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jLabelLogin2 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
+        jPanelCabLogin = new javax.swing.JPanel();
+        jTextFieldLoginDriverID = new javax.swing.JTextField();
+        jTextFieldLoginDriverPassword = new javax.swing.JTextField();
+        jButtonDriverLogin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabelLogin5 = new javax.swing.JLabel();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -92,52 +93,71 @@ public class UserLoginWindow extends javax.swing.JFrame {
 
         jPanelLoginWindow.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelRegister.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        jLabelRegister.setText("Register");
-        jPanel1.add(jLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 100, 40));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/9133514_signup_register_login_icon.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 70, 60));
 
-        jPanelLoginWindow.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 280, 60));
+        jPanelLoginWindow.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 280, 80));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelLogin.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        jLabelLogin.setText("Login");
-        jPanel2.add(jLabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 80, 40));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/loj.png"))); // NOI18N
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 60, 60));
 
-        jPanelLoginWindow.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 60));
+        jPanelLoginWindow.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 80));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabelUserID.setForeground(new java.awt.Color(51, 51, 51));
         jLabelUserID.setText("User ID:");
-        jPanel3.add(jLabelUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-        jPanel3.add(jTextFieldLoginClientID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 120, -1));
-        jPanel3.add(jTextFieldLoginClientPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 120, -1));
+        jPanel3.add(jLabelUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
+        jTextFieldLoginClientID.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(jTextFieldLoginClientID, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 120, -1));
+
+        jTextFieldLoginClientPassword.setBackground(new java.awt.Color(255, 255, 255));
+        jTextFieldLoginClientPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldLoginClientPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldLoginClientPasswordActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextFieldLoginClientPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 120, -1));
+
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Password:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
-        jButtonLogin.setText("Login");
+        jButtonLogin.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonLogin.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/loj1.png"))); // NOI18N
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonLoginActionPerformed(evt);
             }
         });
-        jPanel3.add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 120, 30));
+        jPanel3.add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 70, 60));
 
-        jPanelLoginWindow.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 270, 390));
+        jLabelLogin.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        jLabelLogin.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelLogin.setText("Login");
+        jPanel3.add(jLabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 80, 40));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelLoginWindow.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 270, 370));
+
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextFieldCreateName.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCreateName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCreateNameActionPerformed(evt);
@@ -148,14 +168,17 @@ public class UserLoginWindow extends javax.swing.JFrame {
                 jTextFieldCreateNameKeyPressed(evt);
             }
         });
-        jPanel4.add(jTextFieldCreateName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 110, -1));
+        jPanel4.add(jTextFieldCreateName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 110, -1));
 
+        jLabelName.setForeground(new java.awt.Color(0, 0, 0));
         jLabelName.setText("Name:");
-        jPanel4.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
+        jPanel4.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
 
+        jLabelCreateUserID.setForeground(new java.awt.Color(0, 0, 0));
         jLabelCreateUserID.setText("CreateUser ID:");
-        jPanel4.add(jLabelCreateUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 90, -1));
+        jPanel4.add(jLabelCreateUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 90, -1));
 
+        jTextFieldCreateUserID.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCreateUserID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCreateUserIDActionPerformed(evt);
@@ -166,8 +189,9 @@ public class UserLoginWindow extends javax.swing.JFrame {
                 jTextFieldCreateUserIDKeyPressed(evt);
             }
         });
-        jPanel4.add(jTextFieldCreateUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 110, -1));
+        jPanel4.add(jTextFieldCreateUserID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 110, -1));
 
+        jTextFieldCreatePassword.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCreatePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCreatePasswordActionPerformed(evt);
@@ -178,11 +202,13 @@ public class UserLoginWindow extends javax.swing.JFrame {
                 jTextFieldCreatePasswordKeyPressed(evt);
             }
         });
-        jPanel4.add(jTextFieldCreatePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 110, -1));
+        jPanel4.add(jTextFieldCreatePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 110, -1));
 
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Create Password:");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 100, -1));
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 110, -1));
 
+        jTextFieldCreateCedula.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCreateCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCreateCedulaActionPerformed(evt);
@@ -193,8 +219,9 @@ public class UserLoginWindow extends javax.swing.JFrame {
                 jTextFieldCreateCedulaKeyPressed(evt);
             }
         });
-        jPanel4.add(jTextFieldCreateCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 110, -1));
+        jPanel4.add(jTextFieldCreateCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 110, -1));
 
+        jTextFieldCreateTelefono.setBackground(new java.awt.Color(255, 255, 255));
         jTextFieldCreateTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldCreateTelefonoActionPerformed(evt);
@@ -205,13 +232,15 @@ public class UserLoginWindow extends javax.swing.JFrame {
                 jTextFieldCreateTelefonoKeyPressed(evt);
             }
         });
-        jPanel4.add(jTextFieldCreateTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 110, -1));
+        jPanel4.add(jTextFieldCreateTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 110, -1));
 
+        jLabelCedula.setForeground(new java.awt.Color(0, 0, 0));
         jLabelCedula.setText("Cedula:");
-        jPanel4.add(jLabelCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        jPanel4.add(jLabelCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Telefono:");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, -1, -1));
 
         jButtonRegister.setText("Register");
         jButtonRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -219,52 +248,19 @@ public class UserLoginWindow extends javax.swing.JFrame {
                 jButtonRegisterActionPerformed(evt);
             }
         });
-        jPanel4.add(jButtonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 220, 30));
+        jPanel4.add(jButtonRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 220, 30));
 
         jLabelRegisterInfo.setText("...");
         jPanel4.add(jLabelRegisterInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 220, 20));
 
-        jPanelLoginWindow.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 60, 280, 390));
+        jLabelRegister.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        jLabelRegister.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelRegister.setText("Register");
+        jPanel4.add(jLabelRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 100, 60));
+
+        jPanelLoginWindow.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 280, 370));
 
         jTabbedPaneVentanas.addTab("User Login", jPanelLoginWindow);
-
-        jPanelCabLogin.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelCabLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanelCabLogin.add(jTextFieldLoginDriverID, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 90, -1));
-        jPanelCabLogin.add(jTextFieldLoginDriverPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 90, -1));
-
-        jButtonDriverLogin.setBackground(new java.awt.Color(255, 255, 255));
-        jButtonDriverLogin.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
-        jButtonDriverLogin.setText("Login");
-        jPanelCabLogin.add(jButtonDriverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 150, 30));
-
-        jLabel1.setText("Drive ID");
-        jPanelCabLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
-
-        jLabel2.setText("Password");
-        jPanelCabLogin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabelLogin5.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
-        jLabelLogin5.setText("Login");
-        jPanel5.add(jLabelLogin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 70, 40));
-
-        jPanelCabLogin.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 60));
-
-        jPanel18.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanelCabLogin.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 170, 390));
-
-        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanelCabLogin.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 170, 390));
-
-        jTabbedPaneVentanas.addTab("CabLogin", jPanelCabLogin);
 
         jPanelAdministradorLogin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelAdministradorLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -304,11 +300,41 @@ public class UserLoginWindow extends javax.swing.JFrame {
 
         jTabbedPaneVentanas.addTab("Admin Login", jPanelAdministradorLogin);
 
+        jPanelCabLogin.setBackground(new java.awt.Color(207, 246, 246));
+        jPanelCabLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelCabLogin.add(jTextFieldLoginDriverID, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 90, -1));
+        jPanelCabLogin.add(jTextFieldLoginDriverPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 90, -1));
+
+        jButtonDriverLogin.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonDriverLogin.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
+        jButtonDriverLogin.setText("Login");
+        jPanelCabLogin.add(jButtonDriverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 150, 30));
+
+        jLabel1.setText("Drive ID");
+        jPanelCabLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+
+        jLabel2.setText("Password");
+        jPanelCabLogin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelCabLogin.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 70));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/car.png"))); // NOI18N
+        jPanelCabLogin.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 50, 50));
+
+        jLabelLogin5.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        jLabelLogin5.setText("Login");
+        jPanelCabLogin.add(jLabelLogin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 70, 40));
+
+        jTabbedPaneVentanas.addTab("CabLogin", jPanelCabLogin);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPaneVentanas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPaneVentanas, javax.swing.GroupLayout.DEFAULT_SIZE, 622, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,6 +416,10 @@ public class UserLoginWindow extends javax.swing.JFrame {
     selectedComponent.requestFocus(); // Solicitar el foco en el componente asociado a la pestaña seleccionada
     }//GEN-LAST:event_jTabbedPaneVentanasMouseClicked
 
+    private void jTextFieldLoginClientPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLoginClientPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldLoginClientPasswordActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -398,12 +428,15 @@ public class UserLoginWindow extends javax.swing.JFrame {
     public javax.swing.JButton jButtonLogin;
     public javax.swing.JButton jButtonRegister;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel jLabelCedula;
     public javax.swing.JLabel jLabelCreateUserID;
     public javax.swing.JLabel jLabelLogin;
@@ -416,8 +449,6 @@ public class UserLoginWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

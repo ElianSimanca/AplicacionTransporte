@@ -65,10 +65,10 @@ public class CTRLClientWindow implements ActionListener{
             String Cedula = view.jTextFieldDataClientCedula.getText();
             String Telefono= view.jTextFieldDataClientTelefono.getText();
             String UserType= view.jTextFieldDataClientUserType.getText();
-            Date ahora = new Date();
+            Date hora = new Date();
             float payment = 8000;
             //UbicacionActual, Destino, hora,  payment, ClientID, Nombre, Cedula, Telefono, UserType
-            ClientRequest clientRequest = new ClientRequest(UbicacionActual, Destino, ahora,  payment, ClientID, Nombre, Cedula, Telefono, UserType);
+            ClientRequest clientRequest = new ClientRequest(UbicacionActual, Destino, hora,  payment, ClientID, Nombre, Cedula, Telefono, UserType);
             ColaClientRequest.encolar(clientRequest); 
             ClientWindow.jLabeEstadoDelPedido.setText("Tu peticion esta en espera...");
             //Habilitar boton de cancelar taxi y inhabilitar el de pedir taxi:
