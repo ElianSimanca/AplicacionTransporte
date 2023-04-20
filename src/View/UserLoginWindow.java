@@ -227,19 +227,19 @@ public class UserLoginWindow extends javax.swing.JFrame {
 
         jPanelCabLogin.setBackground(new java.awt.Color(255, 255, 255));
         jPanelCabLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanelCabLogin.add(jTextFieldLoginDriverID, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 90, -1));
-        jPanelCabLogin.add(jTextFieldLoginDriverPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 90, -1));
+        jPanelCabLogin.add(jTextFieldLoginDriverID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 90, -1));
+        jPanelCabLogin.add(jTextFieldLoginDriverPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 90, -1));
 
         jButtonDriverLogin.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDriverLogin.setFont(new java.awt.Font("Roboto Black", 0, 12)); // NOI18N
         jButtonDriverLogin.setText("Login");
-        jPanelCabLogin.add(jButtonDriverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 150, 30));
+        jPanelCabLogin.add(jButtonDriverLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 150, 30));
 
         jLabel1.setText("Drive ID");
-        jPanelCabLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        jPanelCabLogin.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
         jLabel2.setText("Password");
-        jPanelCabLogin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+        jPanelCabLogin.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -247,9 +247,9 @@ public class UserLoginWindow extends javax.swing.JFrame {
 
         jLabelLogin5.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
         jLabelLogin5.setText("Login");
-        jPanel5.add(jLabelLogin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 70, 40));
+        jPanel5.add(jLabelLogin5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 70, 40));
 
-        jPanelCabLogin.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 60));
+        jPanelCabLogin.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 60));
 
         jPanel18.setBackground(new java.awt.Color(255, 255, 255));
         jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -259,7 +259,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanelCabLogin.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 170, 390));
+        jPanelCabLogin.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 30, 390));
 
         jTabbedPaneVentanas.addTab("CabLogin", jPanelCabLogin);
 
@@ -305,7 +305,9 @@ public class UserLoginWindow extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPaneVentanas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPaneVentanas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
