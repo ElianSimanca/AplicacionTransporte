@@ -8,6 +8,7 @@ package Model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -122,12 +123,29 @@ public class AcceptedService implements Serializable{
         return ClientPhoneNumber;
     }
     
-    public void AlarmaAutomatica(){
-        
+    public static void AlarmaAutomatica(){
+        Listas listas = new Listas();
+        String estado = "Aceptado y en Progreso";
+        if(listas.getServiciosAceptados().size()!=0){
+            for (int i = 0; i < listas.getServiciosAceptados().size(); i++) {
+                // Código dentro del bucle
+                long TiempoTranscurrido = tiempoTranscurrido(i);
+                if(TiempoTranscurrido>60&& listas.getServiciosAceptados().get(i).getEstadoDelServicio().equals(estado)){
+
+                }else{ //Si Supera el tiempo limite entonces se cancela el servicio:
+                    JOptionPane.showMessageDialog(null,"El servicio de transporte de " +listas.getServiciosAceptados().get(i).getUbicacion()+ "hasta "+listas.getServiciosAceptados().get(i).getDestino() +"se ha cancelado automaticamente debido ha que ha superado el tiempo limite de espera","Advertencia",JOptionPane.WARNING_MESSAGE);
+                    listas.deleteAcceptedService(i);
+
+                    //Aqui se va a añadir algo para reportar al conductor por no llegar a tiempo
+                }
+            }
+        }    
     }
     
-    
-    
- 
-    
+    public static long tiempoTranscurrido(int indice) {
+        Listas listas = new Listas();
+        Date ahora = new Date();      
+        long tiempo = ahora.getTime() - listas.getServiciosAceptados().get(indice).getHora().getTime();
+        return tiempo / 1000; // devuelve el tiempo en segundos
+    }    
 }

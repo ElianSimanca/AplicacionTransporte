@@ -11,6 +11,7 @@ import View.DriverWindow;
 import View.UserLoginWindow;
 
 
+
 /**
  *
  * @author Elian
@@ -32,10 +33,15 @@ public class AplicacionTransporte {
         
         CTRLUserLogin usercontroller = new CTRLUserLogin(usermodel, userview, driver, client, adminw, clientw,driverw);
         usercontroller.start();
-        
-        
-        
-      
+        while(true) {
+            AcceptedService.AlarmaAutomatica();
+            try {
+                Thread.sleep(60000); // Esperar 1 minuto antes de la siguiente ejecución
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+ 
     }
     
 }

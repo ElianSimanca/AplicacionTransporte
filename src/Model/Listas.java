@@ -79,12 +79,17 @@ public class Listas implements Serializable{
         clientrequests.add(clientRequest);
     }
     public void deleteClientRequest(ClientRequest solicitud) {
-    if (this.clientrequests.remove(solicitud)) { // Eliminar la solicitud del ArrayList
-        JOptionPane.showMessageDialog(null, "Se ha eliminado la solicitud correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-    } else {
-        JOptionPane.showMessageDialog(null, "La solicitud no se encontró en la lista", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        if (this.clientrequests.remove(solicitud)) { // Eliminar la solicitud del ArrayList
+            JOptionPane.showMessageDialog(null, "Se ha eliminado la solicitud correctamente", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "La solicitud no se encontró en la lista", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
     }
-}
+    
+    public void deleteAcceptedService(int indice){
+        serviciosAceptados.remove(indice);
+        escribirDatos();
+    }
     
     public void addDriver(Driver driver){
         driverlist.add(driver);

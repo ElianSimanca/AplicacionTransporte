@@ -31,6 +31,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
         jTabbedPaneVentanas = new javax.swing.JTabbedPane();
         jPanelLoginWindow = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -76,6 +77,8 @@ public class UserLoginWindow extends javax.swing.JFrame {
         jLabelLogin2 = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -423,6 +426,7 @@ public class UserLoginWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelAdministradorLogin;
     private javax.swing.JPanel jPanelCabLogin;
     private javax.swing.JPanel jPanelLoginWindow;
+    private javax.swing.JPasswordField jPasswordField1;
     public javax.swing.JTabbedPane jTabbedPaneVentanas;
     public javax.swing.JTextField jTextFieldAdminID;
     public javax.swing.JTextField jTextFieldAdminPassword;

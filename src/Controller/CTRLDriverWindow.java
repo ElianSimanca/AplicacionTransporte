@@ -93,7 +93,7 @@ public class CTRLDriverWindow implements ActionListener{
                 
                 System.out.println(solicitud.getDestino());
                 System.out.println(solicitud.getName());
-                System.out.println(solicitud.getHora());
+                System.out.println(solicitud.getHora().toString());
                 System.out.println(solicitud.getUbicacion());
                 
             }
