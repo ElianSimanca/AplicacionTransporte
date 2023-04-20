@@ -36,12 +36,6 @@ public class AdminWindow extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jPanelRegistroUsuarios = new javax.swing.JPanel();
-        jTextFieldBuscarClienteID = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jButtonEliminarCliente = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTableClientes = new javax.swing.JTable();
         jPanelRegistrarTrabajadores = new javax.swing.JPanel();
         jTextFieldCreateDriverTelefono = new javax.swing.JTextField();
         jTextFieldCreateDriverPassword = new javax.swing.JTextField();
@@ -62,6 +56,12 @@ public class AdminWindow extends javax.swing.JFrame {
         jLabelRegisterInfo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableDrivers = new javax.swing.JTable();
+        jPanelRegistroUsuarios = new javax.swing.JPanel();
+        jTextFieldBuscarClienteID = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jButtonEliminarCliente = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTableClientes = new javax.swing.JTable();
         jPanelReporteTrabajadores = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -85,7 +85,9 @@ public class AdminWindow extends javax.swing.JFrame {
             }
         });
 
-        jPanelFinanzas.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
+
+        jPanelFinanzas.setBackground(new java.awt.Color(153, 255, 255));
         jPanelFinanzas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTableFinanzas.setModel(new javax.swing.table.DefaultTableModel(
@@ -142,34 +144,7 @@ public class AdminWindow extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Finanzas", jPanelFinanzas);
 
-        jPanelRegistroUsuarios.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelRegistroUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanelRegistroUsuarios.add(jTextFieldBuscarClienteID, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 74, -1));
-
-        jLabel6.setText("Buscar o eliminar por ID:");
-        jPanelRegistroUsuarios.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
-
-        jButtonEliminarCliente.setText("Eliminar Cliente");
-        jPanelRegistroUsuarios.add(jButtonEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
-
-        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane6.setViewportView(jTableClientes);
-
-        jPanelRegistroUsuarios.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 980, 260));
-
-        jTabbedPane1.addTab("Administrar Clientes", jPanelRegistroUsuarios);
-
-        jPanelRegistrarTrabajadores.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelRegistrarTrabajadores.setBackground(new java.awt.Color(153, 255, 255));
         jPanelRegistrarTrabajadores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextFieldCreateDriverTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -215,18 +190,23 @@ public class AdminWindow extends javax.swing.JFrame {
         });
         jPanelRegistrarTrabajadores.add(jButtonRegistrarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel1.setText("Nombre");
         jPanelRegistrarTrabajadores.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel2.setText("Cedula");
         jPanelRegistrarTrabajadores.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
+        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel3.setText("Telefono");
         jPanelRegistrarTrabajadores.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel4.setText("Contraseña");
         jPanelRegistrarTrabajadores.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 20));
 
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel5.setText("UserID");
         jPanelRegistrarTrabajadores.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
@@ -235,7 +215,7 @@ public class AdminWindow extends javax.swing.JFrame {
                 jTextFieldBuscarIDDriverActionPerformed(evt);
             }
         });
-        jPanelRegistrarTrabajadores.add(jTextFieldBuscarIDDriver, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 100, -1));
+        jPanelRegistrarTrabajadores.add(jTextFieldBuscarIDDriver, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 100, -1));
 
         jButtonEliminarConductor.setText("Eliminar por ID");
         jButtonEliminarConductor.addActionListener(new java.awt.event.ActionListener() {
@@ -245,6 +225,7 @@ public class AdminWindow extends javax.swing.JFrame {
         });
         jPanelRegistrarTrabajadores.add(jButtonEliminarConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel9.setText("Eliminar por ID:");
         jPanelRegistrarTrabajadores.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
@@ -255,12 +236,14 @@ public class AdminWindow extends javax.swing.JFrame {
         });
         jPanelRegistrarTrabajadores.add(jTextFieldCreateDriverMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 100, -1));
 
+        jLabel15.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel15.setText("Matricula");
         jPanelRegistrarTrabajadores.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jLabelRegisterInfo.setText("...");
         jPanelRegistrarTrabajadores.add(jLabelRegisterInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 170, -1));
 
+        jTableDrivers.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jTableDrivers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -278,9 +261,39 @@ public class AdminWindow extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Administrar Trabajadores", jPanelRegistrarTrabajadores);
 
-        jPanelReporteTrabajadores.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelRegistroUsuarios.setBackground(new java.awt.Color(102, 255, 255));
+        jPanelRegistroUsuarios.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelRegistroUsuarios.add(jTextFieldBuscarClienteID, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 74, -1));
+
+        jLabel6.setText("Buscar o eliminar por ID:");
+        jPanelRegistroUsuarios.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        jButtonEliminarCliente.setText("Eliminar Cliente");
+        jPanelRegistroUsuarios.add(jButtonEliminarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
+
+        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTableClientes);
+
+        jPanelRegistroUsuarios.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 980, 260));
+
+        jTabbedPane1.addTab("Administrar Clientes", jPanelRegistroUsuarios);
+
+        jPanelReporteTrabajadores.setBackground(new java.awt.Color(204, 255, 255));
+        jPanelReporteTrabajadores.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jPanelReporteTrabajadores.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable2.setBackground(new java.awt.Color(102, 255, 255));
+        jTable2.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -296,22 +309,28 @@ public class AdminWindow extends javax.swing.JFrame {
 
         jPanelReporteTrabajadores.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 490, 320));
 
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel10.setText("Reportes en espera de Revision");
         jPanelReporteTrabajadores.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
+        jLabel11.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel11.setText("Remover Reporte revisado");
         jPanelReporteTrabajadores.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, -1));
+
+        jTextField9.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
         jPanelReporteTrabajadores.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 70, -1));
 
+        jButton7.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 12)); // NOI18N
         jButton7.setText("Eliminar reporte");
         jPanelReporteTrabajadores.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, -1, -1));
 
+        jLabel12.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel12.setText("Elegir por ID de trabajador");
         jPanelReporteTrabajadores.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 260, -1, -1));
 
         jTabbedPane1.addTab("Reportes de Trabajadores", jPanelReporteTrabajadores);
 
-        jPanelReporteClientes.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelReporteClientes.setBackground(new java.awt.Color(153, 255, 255));
         jPanelReporteClientes.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -329,13 +348,16 @@ public class AdminWindow extends javax.swing.JFrame {
 
         jPanelReporteClientes.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 410, 340));
 
+        jLabel13.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel13.setText("Remover Reportes Revisados");
         jPanelReporteClientes.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, -1, -1));
         jPanelReporteClientes.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 120, -1));
 
+        jButton8.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jButton8.setText("Eliminar Reporte");
         jPanelReporteClientes.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, -1));
 
+        jLabel14.setFont(new java.awt.Font("Yu Gothic UI Semilight", 1, 14)); // NOI18N
         jLabel14.setText("Elegir por ID de Cliente");
         jPanelReporteClientes.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, -1, -1));
 

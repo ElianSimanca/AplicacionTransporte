@@ -123,7 +123,7 @@ public class ClientWindow extends javax.swing.JFrame {
 
         jLabeEstadoDelPedido.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
         jLabeEstadoDelPedido.setText("...");
-        jPanel1.add(jLabeEstadoDelPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 450, 30));
+        jPanel1.add(jLabeEstadoDelPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 430, 30));
 
         jTabbedPane1.addTab("Pedir Taxi", jPanel1);
 
