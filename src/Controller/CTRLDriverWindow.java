@@ -120,29 +120,37 @@ public class CTRLDriverWindow implements ActionListener{
             String EstadoServicio ="Concluido";
             
             
-            AcceptedService acceptedService = accetepServices.get(posicion);
-            acceptedService.setEstadoDelServicio(EstadoServicio);
-            //Agregamos uno nuevo dato igual pero con el cambio:
-            listas.addAcceptedService(acceptedService);
-            //Actualiza la tabla con la nueva informacion:
-            //eliminados el dato anterior:
-            listas.deleteAcceptedService(posicion);
             
             
-            ArrayList<AcceptedService> acs = new ArrayList();
-            acs.add(acceptedService);
-            AcceptedServiceTableModel tablemodel = new AcceptedServiceTableModel(acs);
-            DriverWindow.jTableEstadoDelServicioAceptado.setModel(tablemodel);
-            //Actualiza tabla en ventana del cliente tambien:
-            ClientWindow.jLabeEstadoDelPedido.setText("Tu carrera ha terminado con exito");
-            ClientWindow.jTableProgresoServicioUsuario.setModel(tablemodel);
-            //Actualizar la tabla de finanzas
-            ArrayList<AcceptedService> acsm = listas.getServiciosAceptados();
-            AcceptedServiceTableModel tablemodelfinanzas = new AcceptedServiceTableModel(acsm);
-            AdminWindow.jTableFinanzas.setModel(tablemodelfinanzas);
-            float totalrecaudado = acsm.size()*8000;
-            String strTotalRecaudado = Float.toString(totalrecaudado);
-            AdminWindow.jTextFieldTotalRecaudado.setText(strTotalRecaudado);
+            if(posicion > -1){
+                AcceptedService acceptedService = accetepServices.get(posicion);
+                acceptedService.setEstadoDelServicio(EstadoServicio);
+                //Agregamos uno nuevo dato igual pero con el cambio:
+                listas.addAcceptedService(acceptedService);
+                //Actualiza la tabla con la nueva informacion:
+                //eliminados el dato anterior:
+                listas.deleteAcceptedService(posicion);
+                
+                
+                
+                ArrayList<AcceptedService> acs = new ArrayList();
+                acs.add(acceptedService);
+                AcceptedServiceTableModel tablemodel = new AcceptedServiceTableModel(acs);
+                DriverWindow.jTableEstadoDelServicioAceptado.setModel(tablemodel);
+                //Actualiza tabla en ventana del cliente tambien:
+                ClientWindow.jLabeEstadoDelPedido.setText("Tu carrera ha terminado con exito");
+                ClientWindow.jTableProgresoServicioUsuario.setModel(tablemodel);
+                //Actualizar la tabla de finanzas
+                ArrayList<AcceptedService> acsm = listas.getServiciosAceptados();
+                AcceptedServiceTableModel tablemodelfinanzas = new AcceptedServiceTableModel(acsm);
+                AdminWindow.jTableFinanzas.setModel(tablemodelfinanzas);
+                float totalrecaudado = acsm.size()*8000;
+                String strTotalRecaudado = Float.toString(totalrecaudado);
+                AdminWindow.jTextFieldTotalRecaudado.setText(strTotalRecaudado);
+            }else{
+                JOptionPane.showMessageDialog(null, "No hay servicios activos para cancelar","Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+            
             
            
         }else if (e.getSource()== view.jButtonReportarCliente){
