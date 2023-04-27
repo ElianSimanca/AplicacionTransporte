@@ -5,10 +5,14 @@
 package Model;
 
 
+import View.AdminWindow;
+import View.ClientWindow;
+import View.DriverWindow;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -131,10 +135,20 @@ public class AcceptedService implements Serializable{
                 // Código dentro del bucle
                 long TiempoTranscurrido = tiempoTranscurrido(i);
                 if(TiempoTranscurrido>60&& listas.getServiciosAceptados().get(i).getEstadoDelServicio().equals(estado)){
-
+                    
                 }else{ //Si Supera el tiempo limite entonces se cancela el servicio:
                     JOptionPane.showMessageDialog(null,"El servicio de transporte de " +listas.getServiciosAceptados().get(i).getUbicacion()+ "hasta "+listas.getServiciosAceptados().get(i).getDestino() +"se ha cancelado automaticamente debido ha que ha superado el tiempo limite de espera","Advertencia",JOptionPane.WARNING_MESSAGE);
                     listas.deleteAcceptedService(i);
+                    DefaultTableModel model = new DefaultTableModel();
+                    model.setRowCount(0);
+                    ClientWindow.jTableProgresoServicioUsuario.setModel(model);
+                    DriverWindow.jTableEstadoDelServicioAceptado.setModel(model);
+                    ClientWindow.jLabeEstadoDelPedido.setText("Se ha llegado al limite de espera, pida servicio en otro momento");
+                    ArrayList<AcceptedService> acceptedServices = listas.getServiciosAceptados();
+                    AcceptedServiceTableModel actm = new AcceptedServiceTableModel(acceptedServices);
+                    AdminWindow.jTableFinanzas.setModel(actm);
+                    
+                    
 
                     //Aqui se va a añadir algo para reportar al conductor por no llegar a tiempo
                 }

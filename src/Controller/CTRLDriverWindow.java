@@ -86,7 +86,7 @@ public class CTRLDriverWindow implements ActionListener{
                 ArrayList<AcceptedService> acs = new ArrayList();
                 acs.add(acceptedService);
                 AcceptedServiceTableModel tablemodel = new AcceptedServiceTableModel(acs);
-                view.jTableEstadoDelServicioAceptado.setModel(tablemodel);
+                DriverWindow.jTableEstadoDelServicioAceptado.setModel(tablemodel);
                 //Actualiza tabla en ventana del cliente tambien:
                 ClientWindow.jTableProgresoServicioUsuario.setModel(tablemodel);
                 ClientWindow.jLabeEstadoDelPedido.setText("Un taxi esta en Camino para atenderte...");
@@ -124,7 +124,7 @@ public class CTRLDriverWindow implements ActionListener{
             ArrayList<AcceptedService> acs = new ArrayList();
             acs.add(acceptedService);
             AcceptedServiceTableModel tablemodel = new AcceptedServiceTableModel(acs);
-            view.jTableEstadoDelServicioAceptado.setModel(tablemodel);
+            DriverWindow.jTableEstadoDelServicioAceptado.setModel(tablemodel);
             //Actualiza tabla en ventana del cliente tambien:
             ClientWindow.jLabeEstadoDelPedido.setText("Tu carrera ha terminado con exito");
             ClientWindow.jTableProgresoServicioUsuario.setModel(tablemodel);

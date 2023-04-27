@@ -160,7 +160,7 @@ public class DriverWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    public javax.swing.JTable jTableEstadoDelServicioAceptado;
+    public static javax.swing.JTable jTableEstadoDelServicioAceptado;
     public javax.swing.JTextField jTextFieldDataDriverCedula;
     public javax.swing.JTextField jTextFieldDataDriverID;
     public javax.swing.JTextField jTextFieldDataDriverMatricula;
