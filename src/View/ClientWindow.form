@@ -236,7 +236,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabeEstadoDelPedido">
+            <Component class="javax.swing.JLabel" name="jLabelEstadoDelPedido">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto Black" size="14" style="0"/>

@@ -69,7 +69,7 @@ public class CTRLClientWindow implements ActionListener{
             //UbicacionActual, Destino, hora,  payment, ClientID, Nombre, Cedula, Telefono, UserType
             ClientRequest clientRequest = new ClientRequest(UbicacionActual, Destino, hora,  payment, ClientID, Nombre, Cedula, Telefono, UserType);
             ColaClientRequest.encolar(clientRequest); 
-            ClientWindow.jLabeEstadoDelPedido.setText("Tu peticion esta en espera...");
+            ClientWindow.jLabelEstadoDelPedido.setText("Tu peticion esta en espera...");
             //Habilitar boton de cancelar taxi y inhabilitar el de pedir taxi:
             view.jButtonCancelarTaxi.setEnabled(true);                     
             
@@ -77,7 +77,7 @@ public class CTRLClientWindow implements ActionListener{
             // Código para el botón Cancelar Taxi
             
             ColaClientRequest.desencolarSinRetorno();         
-            ClientWindow.jLabeEstadoDelPedido.setText("Se ha cancelado tu peticion correctamente...");
+            ClientWindow.jLabelEstadoDelPedido.setText("Se ha cancelado tu peticion correctamente...");
             
         }else if(e.getSource()== this.view.jButtonReportarTaxista){
             // Código para el botón Reportar Taxista

@@ -66,7 +66,7 @@ public class AplicacionTransporte {
                         model.setRowCount(0);
                         ClientWindow.jTableProgresoServicioUsuario.setModel(model);
                         DriverWindow.jTableEstadoDelServicioAceptado.setModel(model);
-                        ClientWindow.jLabeEstadoDelPedido.setText("Se ha llegado al limite de espera, pida servicio en otro momento");
+                        ClientWindow.jLabelEstadoDelPedido.setText("Se ha llegado al limite de espera, pida servicio en otro momento");
                         ArrayList<AcceptedService> acceptedServices = listas.getServiciosAceptados();
                         AcceptedServiceTableModel actm = new AcceptedServiceTableModel(acceptedServices);
                         AdminWindow.jTableFinanzas.setModel(actm);

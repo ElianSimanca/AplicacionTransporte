@@ -42,7 +42,7 @@ public class ClientWindow extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableProgresoServicioUsuario = new javax.swing.JTable();
-        jLabeEstadoDelPedido = new javax.swing.JLabel();
+        jLabelEstadoDelPedido = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -121,9 +121,9 @@ public class ClientWindow extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 660, 40));
 
-        jLabeEstadoDelPedido.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
-        jLabeEstadoDelPedido.setText("...");
-        jPanel1.add(jLabeEstadoDelPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 450, 30));
+        jLabelEstadoDelPedido.setFont(new java.awt.Font("Roboto Black", 0, 14)); // NOI18N
+        jLabelEstadoDelPedido.setText("...");
+        jPanel1.add(jLabelEstadoDelPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 450, 30));
 
         jTabbedPane1.addTab("Pedir Taxi", jPanel1);
 
@@ -190,7 +190,6 @@ public class ClientWindow extends javax.swing.JFrame {
     public javax.swing.JButton jButtonCancelarTaxi;
     public javax.swing.JButton jButtonEnviarPeticion;
     public javax.swing.JButton jButtonReportarTaxista;
-    public static javax.swing.JLabel jLabeEstadoDelPedido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -201,6 +200,7 @@ public class ClientWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public static javax.swing.JLabel jLabelEstadoDelPedido;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
