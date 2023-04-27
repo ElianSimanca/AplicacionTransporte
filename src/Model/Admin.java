@@ -14,7 +14,7 @@ public class Admin {
     Listas listas;
 
     public Admin() {
-        this.listas= new Listas();
+        this.listas= Listas.getInstance();
     }
      
 

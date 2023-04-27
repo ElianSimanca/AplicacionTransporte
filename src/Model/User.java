@@ -92,7 +92,7 @@ public class User implements Serializable{
     //*Metodos de validación
     public boolean validarUsuario(String vCedula,String vPhoneNumber){
         // Verificar si los datos ya están registrados:
-            Listas listas = new Listas();
+            Listas listas = Listas.getInstance();
             ArrayList<User> users = listas.getUserslist();
             boolean isRegistered = false;
             for (User user : users) {
