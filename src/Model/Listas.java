@@ -24,6 +24,7 @@ import javax.swing.JOptionPane;
  * @author Elian
  */
 public class Listas implements Serializable{
+    private static Listas instance = null;
     private static final long serialVersionUID = -8231930996615448666L;
     private static final String ARCHIVO = "src/resources/datos.dat";
     //Lista de Usuarios en general
@@ -37,7 +38,7 @@ public class Listas implements Serializable{
     //Lista de espera de peticiones de taxi
     private ArrayList<ClientRequest> clientrequests;
 
-    public Listas() {
+    private Listas() {
         clientrequests= new ArrayList<>();
         clientslist = new ArrayList<>();
         driverlist = new ArrayList<>();
@@ -155,6 +156,13 @@ public class Listas implements Serializable{
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         }
+    }
+    
+    public static synchronized Listas getInstance() {
+        if (instance == null) {
+            instance = new Listas();
+        }
+        return instance;
     }
     
 }

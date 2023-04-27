@@ -38,7 +38,7 @@ public class CTRLUserLogin implements ActionListener{
     private ClientWindow Clientw;    
     private AdminWindow adminwindow;
     private UserLoginWindow view;
-    Listas listas= new Listas();
+    Listas listas= Listas.getInstance();
 
     public CTRLUserLogin(User model, UserLoginWindow view,Driver Driver,Client Client,AdminWindow Adminw,ClientWindow ClientW, DriverWindow DriverW) {
         this.client= Client;

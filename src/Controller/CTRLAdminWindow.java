@@ -30,7 +30,7 @@ import javax.swing.JTable;
 public class CTRLAdminWindow implements ActionListener{
     private Driver driver;
     private AdminWindow view;
-    Listas listas = new Listas();
+    Listas listas = Listas.getInstance();
 
     public CTRLAdminWindow(Driver driver, AdminWindow view) {
         this.driver = driver;

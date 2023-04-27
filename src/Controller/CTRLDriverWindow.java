@@ -30,7 +30,7 @@ public class CTRLDriverWindow implements ActionListener{
     private DriverWindow view;
     private Driver driver;
 
-    Listas listas = new Listas();
+    Listas listas = Listas.getInstance();
 
     public CTRLDriverWindow(DriverWindow view, Driver Driver) {
         this.view = view;
@@ -118,9 +118,17 @@ public class CTRLDriverWindow implements ActionListener{
             }
             
             String EstadoServicio ="Concluido";
+            
+            
             AcceptedService acceptedService = accetepServices.get(posicion);
             acceptedService.setEstadoDelServicio(EstadoServicio);
+            //Agregamos uno nuevo dato igual pero con el cambio:
+            listas.addAcceptedService(acceptedService);
             //Actualiza la tabla con la nueva informacion:
+            //eliminados el dato anterior:
+            listas.deleteAcceptedService(posicion);
+            
+            
             ArrayList<AcceptedService> acs = new ArrayList();
             acs.add(acceptedService);
             AcceptedServiceTableModel tablemodel = new AcceptedServiceTableModel(acs);
